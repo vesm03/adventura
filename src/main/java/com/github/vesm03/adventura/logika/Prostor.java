@@ -44,7 +44,7 @@ public class Prostor {
         this.nazev = nazev;
         this.popis = popis;
         vychody = new HashSet<>();
-        veciVProstoru = new HashMap<>();
+        veciVProstoru = new HashMap<String, Vec>();
         this.zamceny = zamceny;
         seznamPostav = new HashMap<String, Postava>();
         this.x = x;
@@ -317,4 +317,10 @@ public class Prostor {
 	public void setY(double y) {
 		this.y = y;
 	}
+	
+	@Override
+    public String toString() {
+    	// TODO Auto-generated method stub
+    	return getNazev();
+    }
 }

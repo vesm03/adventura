@@ -40,6 +40,12 @@ public class Vec
     public boolean getJePrenositelna(){
         return prenositelnost;
     }
+    
+    @Override
+    public String toString() {
+    // TODO Auto-generated method stub
+    	return getNazev();
+	}
 
     //== Soukromé metody (instancí i třídy) ========================================
 
