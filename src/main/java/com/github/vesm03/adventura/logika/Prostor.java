@@ -5,6 +5,8 @@ package com.github.vesm03.adventura.logika;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import com.github.vesm03.adventura.logika.Vec;
+
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
  *
@@ -26,6 +28,8 @@ public class Prostor {
     private boolean zamceny;
     private String klic;
     private Map<String, Postava> seznamPostav;
+    private double x;
+    private double y;
 
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
@@ -36,13 +40,15 @@ public class Prostor {
      * @param popis Popis prostoru.
      * * @param zamceny Definuje, zdali je prostor zamčený.
      */
-    public Prostor(String nazev, String popis, boolean zamceny) {
+    public Prostor(String nazev, String popis, boolean zamceny, double x, double y) {
         this.nazev = nazev;
         this.popis = popis;
         vychody = new HashSet<>();
         veciVProstoru = new HashMap<>();
         this.zamceny = zamceny;
         seznamPostav = new HashMap<String, Postava>();
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -287,4 +293,28 @@ public class Prostor {
     public Vec odeberVec(String nazev){
         return veciVProstoru.remove(nazev);
     }
+    
+    /**
+     * metoda vrací seznam věcí v místnosti
+     * @return kolekce věcí
+     */
+    public Collection<Vec> getVeci() {
+    	return Collections.unmodifiableCollection(veciVProstoru.values());
+    }
+    
+    public double getX() {
+		return x;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
 }

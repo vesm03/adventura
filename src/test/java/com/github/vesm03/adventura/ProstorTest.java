@@ -55,8 +55,8 @@ public class ProstorTest
      */
     @Test
     public  void testLzeProjit() {      
-        Prostor prostor1 = new Prostor("hala", "vstupní hala budovy VŠE na Jižním městě", false);
-        Prostor prostor2 = new Prostor("bufet", "bufet, kam si můžete zajít na svačinku", false);
+        Prostor prostor1 = new Prostor("hala", "vstupní hala budovy VŠE na Jižním městě", false, 0.0, 0.0);
+        Prostor prostor2 = new Prostor("bufet", "bufet, kam si můžete zajít na svačinku", false, 0.0, 0.0);
         prostor1.setVychod(prostor2);
         prostor2.setVychod(prostor1);
         assertEquals(prostor2, prostor1.vratSousedniProstor("bufet"));
@@ -70,7 +70,7 @@ public class ProstorTest
     @Test
     public void testVeci()
     {
-    	com.github.vesm03.adventura.logika.Prostor prostor2 = new com.github.vesm03.adventura.logika.Prostor("a", "a", false);
+    	com.github.vesm03.adventura.logika.Prostor prostor2 = new com.github.vesm03.adventura.logika.Prostor("a", "a", false, 0.0, 0.0);
     	com.github.vesm03.adventura.logika.Vec vec2 = new com.github.vesm03.adventura.logika.Vec("vec1", true);
         assertEquals(true, prostor2.vlozVec(vec2));
         assertEquals(false, prostor2.jeVecVProstoru("jidlo"));
