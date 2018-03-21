@@ -159,6 +159,8 @@ public class HerniPlan extends Observable {
      */
     public void vlozVecDoProstoru(Vec vec, Prostor prostor){
         prostor.vlozVec(vec);
+        setChanged();
+        notifyObservers();
     }
     
     /**

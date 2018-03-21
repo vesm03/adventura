@@ -19,7 +19,7 @@ import com.github.vesm03.adventura.logika.Vec;
  * @author Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Martin Veselý
  * @version 28. 12. 2016
  */
-public class Prostor {
+public class Prostor extends Observable{
 
     private String nazev;
     private String popis;
@@ -273,6 +273,8 @@ public class Prostor {
      */
     public boolean vlozVec(Vec neco){
         veciVProstoru.put(neco.getNazev(), neco);
+        setChanged();
+        notifyObservers();
         return true;
     }
     
@@ -291,6 +293,8 @@ public class Prostor {
      * @return true/false
      */
     public Vec odeberVec(String nazev){
+    	setChanged();
+        notifyObservers();
         return veciVProstoru.remove(nazev);
     }
     
