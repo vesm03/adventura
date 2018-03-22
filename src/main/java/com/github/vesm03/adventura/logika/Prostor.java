@@ -6,6 +6,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import com.github.vesm03.adventura.logika.Vec;
+import com.github.vesm03.adventura.logika.Postava;
 
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
@@ -304,6 +305,10 @@ public class Prostor extends Observable{
      */
     public Collection<Vec> getVeci() {
     	return Collections.unmodifiableCollection(veciVProstoru.values());
+    }
+    
+    public Collection<Postava> getPostavy() {
+    		return Collections.unmodifiableCollection(seznamPostav.values());
     }
     
     public double getX() {

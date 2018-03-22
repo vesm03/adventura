@@ -6,6 +6,7 @@ import java.util.Observer;
 import com.github.vesm03.adventura.logika.IHra;
 import com.github.vesm03.adventura.logika.Prostor;
 import com.github.vesm03.adventura.logika.Vec;
+import com.github.vesm03.adventura.logika.Postava;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
@@ -27,6 +28,7 @@ public class HomeController extends GridPane implements Observer {
 	@FXML private TextArea vystup;
 	@FXML private ListView<Vec> seznamVeciMistnost;
 	@FXML private ListView<Prostor> seznamVychodu;
+	@FXML private ListView<Postava> seznamPostav;
 	@FXML private ImageView uzivatel;
 	
 	private IHra hra;
@@ -57,6 +59,7 @@ public class HomeController extends GridPane implements Observer {
 		this.hra = hra;
 		seznamVeciMistnost.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVeci());
 		seznamVychodu.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVychody());
+		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getPostavy());
 		uzivatel.setX(hra.getHerniPlan().getAktualniProstor().getX());
 		uzivatel.setY(hra.getHerniPlan().getAktualniProstor().getY());
 		hra.getHerniPlan().addObserver(this);
@@ -66,8 +69,10 @@ public class HomeController extends GridPane implements Observer {
 	public void update(Observable arg0, Object arg1) {
 		seznamVeciMistnost.getItems().clear();
 		seznamVychodu.getItems().clear();
+		seznamPostav.getItems().clear();
 		seznamVeciMistnost.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVeci());
 		seznamVychodu.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVychody());
+		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getPostavy());
 		uzivatel.setX(hra.getHerniPlan().getAktualniProstor().getX());
 		uzivatel.setY(hra.getHerniPlan().getAktualniProstor().getY());
 		

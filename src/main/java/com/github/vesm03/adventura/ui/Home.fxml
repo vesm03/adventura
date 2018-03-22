@@ -123,7 +123,7 @@
       <VBox GridPane.columnIndex="3" GridPane.rowIndex="2">
          <children>
             <Label text="Postavy v místnosti" />
-            <ListView fx:id="seznamVeciMistnost1" prefHeight="200.0" prefWidth="235.0" />
+            <ListView fx:id="seznamPostav" prefHeight="200.0" prefWidth="235.0" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

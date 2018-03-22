@@ -72,6 +72,12 @@ public class Postava
     public String getProslov() {
         return proslov[pocitadlo];
     }
+    
+    @Override
+    public String toString() {
+    // TODO Auto-generated method stub
+    	return getJmeno();
+	}
 
     //== Soukromé metody (instancí i třídy) ========================================
 
