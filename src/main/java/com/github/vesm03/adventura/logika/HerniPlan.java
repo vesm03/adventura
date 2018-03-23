@@ -38,15 +38,15 @@ public class HerniPlan extends Observable {
      */
     private void zalozProstoryHry() {
         // vytvářejí se jednotlivé prostory
-        Prostor paluba = new Prostor("paluba","paluba pirátské lodi", true, 18.0, 92.0);
-        Prostor kajuta = new Prostor("kajuta", "opuštěná kajuta", false, 204.0, 63.0);
-        Prostor chodba = new Prostor("chodba","chodba uprostřed podpalubí", false, 139.0, 161.0);
-        Prostor kajuta_kuchare = new Prostor("kajuta_kuchaře","bývalá kajuta kuchaře", false, 78.0, 58.0);
-        Prostor sklad_naradi = new Prostor("sklad_nářadí","místnost určená pro skladování nářadí", true, 141.0, 93.0);
-        Prostor temna_mistnost = new Prostor("temná_místnost","temná místnost, do které piráti uvěznili Jordana", false, 100.0, 93.0);
-        Prostor sklad_potravin = new Prostor("sklad_potravin","místnost určená pro skladování potravin", false, 141.0, 141.0);
+        Prostor paluba = new Prostor("paluba","paluba pirátské lodi", true, 244.0, 0.0);
+        Prostor kajuta = new Prostor("kajuta", "opuštěná kajuta", false, 85.0, 116.0);
+        Prostor chodba = new Prostor("chodba","chodba uprostřed podpalubí", false, 291.0, 116.0);
+        Prostor kajuta_kuchare = new Prostor("kajuta_kuchaře","bývalá kajuta kuchaře", false, 418.0, 109.0);
+        Prostor sklad_naradi = new Prostor("sklad_nářadí","místnost určená pro skladování nářadí", true, 85.0, 211.0);
+        Prostor temna_mistnost = new Prostor("temná_místnost","temná místnost, do které piráti uvěznili Jordana", false, 284.0, 215.0);
+        Prostor sklad_potravin = new Prostor("sklad_potravin","místnost určená pro skladování potravin", false, 418.0, 216.0);
         
-        Prostor tajna_mistnost = new Prostor("tajná_místnost","tajná místnost v kajutě kuchaře", true, 200.0, 200.0);
+        Prostor tajna_mistnost = new Prostor("tajná_místnost","tajná místnost v kajutě kuchaře", true, 457.0, 60.0);
         
         seznamProstoru2 = new Prostor[8];
         seznamProstoru2[0] = paluba;

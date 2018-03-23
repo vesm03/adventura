@@ -42,7 +42,7 @@ public class Hra implements IHra {
      */
     public String vratUvitani() {
         return "Vítejte!\n" +
-               "Toto je hra o příběhu námořníka Jordana, který se snaží utéct z pirátské lodi.\n" +
+               "Toto je hra o příběhu námořníka Jordana, \nkterý se snaží utéct z pirátské lodi.\n" +
                "Napište 'nápověda', pokud si nevíte rady, jak hrát dál.\n" +
                "\n" +
                herniPlan.getAktualniProstor().dlouhyPopis();
