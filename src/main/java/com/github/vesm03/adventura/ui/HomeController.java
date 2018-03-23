@@ -3,6 +3,7 @@ package com.github.vesm03.adventura.ui;
 import java.util.Observable;
 import java.util.Observer;
 
+import com.github.vesm03.adventura.logika.Hra;
 import com.github.vesm03.adventura.logika.IHra;
 import com.github.vesm03.adventura.logika.Prostor;
 import com.github.vesm03.adventura.logika.Vec;
@@ -10,6 +11,7 @@ import com.github.vesm03.adventura.logika.Postava;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -30,6 +32,8 @@ public class HomeController extends GridPane implements Observer {
 	@FXML private ListView<Prostor> seznamVychodu;
 	@FXML private ListView<Postava> seznamPostav;
 	@FXML private ImageView uzivatel;
+	@FXML private MenuItem newGame;
+	@FXML private MenuItem endGame;
 	
 	private IHra hra;
 	
@@ -48,12 +52,28 @@ public class HomeController extends GridPane implements Observer {
 		}
 	}
 	
+	@FXML public void setNewGame() {
+		vstupniText.setDisable(false);
+		this.inicializuj(new Hra());
+	}
+	
+	@FXML public void setEndGame() {
+		hra.setKonecHry(true);
+		if(hra.konecHry()) {
+			vystup.appendText("\n----------\nKonec hry\n----------\n");
+			vstupniText.setDisable(true);
+		}
+	}
+	
 	/**
 	 * Metoda bude soužit pro předání objektu se spuštěnou hrou
 	 * kontroleru a zobrazí stav hry v grafice.
 	 * @param objekt spuštěné hry
 	 */
 	public void inicializuj(IHra hra) {
+		seznamVeciMistnost.getItems().clear();
+		seznamVychodu.getItems().clear();
+		seznamPostav.getItems().clear();
 		vystup.setText(hra.vratUvitani());
 		vystup.setEditable(false);
 		this.hra = hra;

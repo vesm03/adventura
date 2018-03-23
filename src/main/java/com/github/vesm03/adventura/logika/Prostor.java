@@ -170,7 +170,7 @@ public class Prostor extends Observable{
      * @return Dlouhý popis prostoru
      */
     public String dlouhyPopis() {
-        return "Jsi v mistnosti/prostoru " + popis + ".\n"
+        return "Jsi v mistnosti " + popis + ".\n"
                 + popisVychodu() + "\n"
                 + popisVeci() + "\n"
                 + nazvyPostav();
