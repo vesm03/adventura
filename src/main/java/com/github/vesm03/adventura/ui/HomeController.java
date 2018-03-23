@@ -35,6 +35,23 @@ public class HomeController extends GridPane implements Observer {
 	@FXML private MenuItem newGame;
 	@FXML private MenuItem endGame;
 	
+	@FXML private ImageView bambitka;
+	@FXML private ImageView banan;
+	@FXML private ImageView klobouk;
+	@FXML private ImageView lano;
+	@FXML private ImageView nuz;
+	@FXML private ImageView kotva;
+	@FXML private ImageView lahev;
+	@FXML private ImageView maso;
+	@FXML private ImageView lebka;
+	@FXML private ImageView strelny_prach;
+	@FXML private ImageView zlato;
+	@FXML private ImageView rum;
+	@FXML private ImageView pomeranc;
+	@FXML private ImageView klic;
+	@FXML private ImageView rezavy_klic;
+	@FXML private ImageView tajny_klic;
+	
 	private IHra hra;
 	
 	/**
@@ -83,6 +100,22 @@ public class HomeController extends GridPane implements Observer {
 		uzivatel.setX(hra.getHerniPlan().getAktualniProstor().getX());
 		uzivatel.setY(hra.getHerniPlan().getAktualniProstor().getY());
 		hra.getHerniPlan().addObserver(this);
+		bambitka.setVisible(false);
+		banan.setVisible(false);
+		klobouk.setVisible(false);
+		lano.setVisible(false);
+		nuz.setVisible(false);
+		kotva.setVisible(false);
+		lahev.setVisible(false);
+		maso.setVisible(false);
+		lebka.setVisible(false);
+		strelny_prach.setVisible(false);
+		zlato.setVisible(false);
+		rum.setVisible(false);
+		pomeranc.setVisible(false);
+		klic.setVisible(false);
+		rezavy_klic.setVisible(false);
+		tajny_klic.setVisible(false);
 	}
 
 	@Override
@@ -95,7 +128,22 @@ public class HomeController extends GridPane implements Observer {
 		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getPostavy());
 		uzivatel.setX(hra.getHerniPlan().getAktualniProstor().getX());
 		uzivatel.setY(hra.getHerniPlan().getAktualniProstor().getY());
-		
+		if(hra.getBatoh().obsahujeVecNazev("bambitka")) {bambitka.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("banán")) {banan.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("klobouk")) {klobouk.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("lano")) {lano.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("nůž")) {nuz.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("kotva")) {kotva.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("lahev")) {lahev.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("maso")) {maso.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("lebka")) {lebka.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("střelný_prach")) {strelny_prach.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("zlato")) {zlato.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("rum")) {rum.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("pomeranč")) {pomeranc.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("klíč")) {klic.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("rezavý_klíč")) {rezavy_klic.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("tajný_klíč")) {tajny_klic.setVisible(true);}
 	}
 
 }

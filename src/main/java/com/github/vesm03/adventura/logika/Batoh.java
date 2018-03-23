@@ -2,6 +2,7 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.vesm03.adventura.logika;
 import java.util.Map;
+import java.util.Observable;
 import java.util.HashMap;
 
 
@@ -11,7 +12,7 @@ import java.util.HashMap;
  * @author    Martin Veselý
  * @version   28. 12. 2016
  */
-public class Batoh
+public class Batoh extends Observable 
 {
     //== Datové atributy (statické i instancí)======================================
     private static int kapacita = 1 ;
