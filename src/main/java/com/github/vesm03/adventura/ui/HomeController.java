@@ -69,11 +69,17 @@ public class HomeController extends GridPane implements Observer {
 		}
 	}
 	
+	/**
+	 * začne novou hru od začátku
+	 */
 	@FXML public void setNewGame() {
 		vstupniText.setDisable(false);
 		this.inicializuj(new Hra());
 	}
 	
+	/**
+	 * ukončí aktuálně hranou hru
+	 */
 	@FXML public void setEndGame() {
 		hra.setKonecHry(true);
 		if(hra.konecHry()) {
@@ -125,6 +131,11 @@ public class HomeController extends GridPane implements Observer {
 		tajny_klic.setVisible(false);
 	}
 
+	/**
+	 * Metoda bude soužit pro aktualizaci grafických prvků při změně
+	 * ve hře (sebrání věci, přechod do prostoru apod.
+	 * @param Observable a Object
+	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		seznamVeciMistnost.getItems().clear();

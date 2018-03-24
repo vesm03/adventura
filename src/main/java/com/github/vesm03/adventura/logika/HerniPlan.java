@@ -153,6 +153,11 @@ public class HerniPlan extends Observable {
         return aktualniProstor;
     }
     
+    /**
+     *  Metoda vrací odkaz na seznam všech prostorů.
+     *
+     *@return     pole prostorů
+     */
     public Prostor[] getProstory(){
         return seznamProstoru2;
     }

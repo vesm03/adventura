@@ -39,7 +39,7 @@ public class Prostor extends Observable{
      * @param nazev nazev prostoru, jednoznačný identifikátor, jedno slovo nebo
      * víceslovný název bez mezer.
      * @param popis Popis prostoru.
-     * * @param zamceny Definuje, zdali je prostor zamčený.
+     * * @param zamceny Definuje, zdali je prostor zamčený, X a Y jsou souřadnice prostoru.
      */
     public Prostor(String nazev, String popis, boolean zamceny, double x, double y) {
         this.nazev = nazev;
@@ -307,23 +307,41 @@ public class Prostor extends Observable{
     	return Collections.unmodifiableCollection(veciVProstoru.values());
     }
     
+    /**
+     * metoda vrací seznam postav v místnosti
+     * @return kolekce postav
+     */
     public Collection<Postava> getPostavy() {
     		return Collections.unmodifiableCollection(seznamPostav.values());
     }
     
+    /**
+     * metoda vrací X-souřadnice prostoru
+     * @return X-souřadnice
+     */
     public double getX() {
 		return x;
 	}
 
-	public void setX(double x) {
+    /**
+     * metoda nastavuje X-souřadnice prostoru
+     */
+    public void setX(double x) {
 		this.x = x;
 	}
 
-	public double getY() {
+    /**
+     * metoda vrací Y-souřadnice prostoru
+     * @return Y-souřadnice
+     */
+    public double getY() {
 		return y;
 	}
 
-	public void setY(double y) {
+    /**
+     * metoda nastavuje Y-souřadnice prostoru
+     */
+    public void setY(double y) {
 		this.y = y;
 	}
 	

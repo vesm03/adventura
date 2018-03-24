@@ -112,6 +112,11 @@ public class Hra implements IHra {
         return herniPlan;
      }
      
+     /**
+      *  Metoda vrátí odkaz na batoh
+      *  
+      *  @return     odkaz na batoh
+      */
      public Batoh getBatoh(){
          return batoh;
       }
