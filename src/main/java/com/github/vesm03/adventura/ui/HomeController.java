@@ -10,12 +10,15 @@ import com.github.vesm03.adventura.logika.Vec;
 import com.github.vesm03.adventura.logika.Postava;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 /**
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
@@ -34,6 +37,7 @@ public class HomeController extends GridPane implements Observer {
 	@FXML private ImageView uzivatel;
 	@FXML private MenuItem newGame;
 	@FXML private MenuItem endGame;
+	@FXML private MenuItem help;
 	
 	@FXML private ImageView bambitka;
 	@FXML private ImageView banan;
@@ -86,6 +90,15 @@ public class HomeController extends GridPane implements Observer {
 			vystup.appendText("\n----------\nKonec hry\n----------\n");
 			vstupniText.setDisable(true);
 		}
+	}
+	
+	@FXML public void displayHelp() {
+		Stage stage = new Stage();
+        stage.setTitle("Nápověda k aplikaci");
+        WebView webview = new WebView();
+        webview.getEngine().load(HomeController.class.getResource("help.htm").toExternalForm());
+        stage.setScene(new Scene(webview, 500, 500));
+        stage.show();
 	}
 	
 	/**

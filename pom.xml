@@ -4,7 +4,7 @@
 
   <groupId>com.github.vesm03</groupId>
   <artifactId>adventura</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>adventura</name>
@@ -40,7 +40,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.github.vesm03.adventura.main.Start</mainClass>
+							<mainClass>com.github.vesm03.adventura.ui.Application</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
