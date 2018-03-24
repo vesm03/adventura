@@ -2,7 +2,7 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.vesm03.adventura.logika;
 
-
+import java.util.Observable;
 
 /*******************************************************************************
  * Instance třídy PrikazSeber představují ...
@@ -10,7 +10,7 @@ package com.github.vesm03.adventura.logika;
  * @author    Martin Veselý
  * @version   28. 12. 2016
  */
-public class PrikazSeber implements IPrikaz
+public class PrikazSeber extends Observable implements IPrikaz  
 {
     //== Datové atributy (statické i instancí)======================================
     private static final String NAZEV = "seber";
@@ -56,6 +56,8 @@ public class PrikazSeber implements IPrikaz
             if (sbiranaVec.getJePrenositelna()){
                 //je treba vyresit kapacitu batohu 
                 if (batoh.vlozVecDoBatohu(sbiranaVec)){
+                	setChanged();
+                    notifyObservers();
                     return "Sebral jsi " + nazevSbiraneVeci;
                 }
                 else {

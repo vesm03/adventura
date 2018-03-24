@@ -94,12 +94,19 @@ public class HomeController extends GridPane implements Observer {
 		vystup.setText(hra.vratUvitani());
 		vystup.setEditable(false);
 		this.hra = hra;
+		
 		seznamVeciMistnost.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVeci());
 		seznamVychodu.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVychody());
 		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getPostavy());
 		uzivatel.setX(hra.getHerniPlan().getAktualniProstor().getX());
 		uzivatel.setY(hra.getHerniPlan().getAktualniProstor().getY());
+		
 		hra.getHerniPlan().addObserver(this);
+		hra.getBatoh().addObserver(this);
+		for (int i = 0; i < hra.getHerniPlan().getProstory().length; i++) {
+			hra.getHerniPlan().getProstory()[i].addObserver(this);
+		}
+		
 		bambitka.setVisible(false);
 		banan.setVisible(false);
 		klobouk.setVisible(false);
@@ -128,22 +135,22 @@ public class HomeController extends GridPane implements Observer {
 		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getPostavy());
 		uzivatel.setX(hra.getHerniPlan().getAktualniProstor().getX());
 		uzivatel.setY(hra.getHerniPlan().getAktualniProstor().getY());
-		if(hra.getBatoh().obsahujeVecNazev("bambitka")) {bambitka.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("banán")) {banan.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("klobouk")) {klobouk.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("lano")) {lano.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("nůž")) {nuz.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("kotva")) {kotva.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("lahev")) {lahev.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("maso")) {maso.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("lebka")) {lebka.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("střelný_prach")) {strelny_prach.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("zlato")) {zlato.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("rum")) {rum.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("pomeranč")) {pomeranc.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("klíč")) {klic.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("rezavý_klíč")) {rezavy_klic.setVisible(true);}
-		if(hra.getBatoh().obsahujeVecNazev("tajný_klíč")) {tajny_klic.setVisible(true);}
+		if(hra.getBatoh().obsahujeVecNazev("bambitka")) {bambitka.setVisible(true);} else {bambitka.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("banán")) {banan.setVisible(true);} else {banan.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("klobouk")) {klobouk.setVisible(true);} else {klobouk.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("lano")) {lano.setVisible(true);} else {lano.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("nůž")) {nuz.setVisible(true);} else {nuz.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("kotva")) {kotva.setVisible(true);} else {kotva.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("lahev")) {lahev.setVisible(true);} else {lahev.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("maso")) {maso.setVisible(true);} else {maso.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("lebka")) {lebka.setVisible(true);} else {lebka.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("střelný_prach")) {strelny_prach.setVisible(true);} else {strelny_prach.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("zlato")) {zlato.setVisible(true);} else {zlato.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("rum")) {rum.setVisible(true);} else {rum.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("pomeranč")) {pomeranc.setVisible(true);} else {pomeranc.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("klíč")) {klic.setVisible(true);} else {klic.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("rezavý_klíč")) {rezavy_klic.setVisible(true);} else {rezavy_klic.setVisible(false);}
+		if(hra.getBatoh().obsahujeVecNazev("tajný_klíč")) {tajny_klic.setVisible(true);} else {tajny_klic.setVisible(false);}
 	}
 
 }

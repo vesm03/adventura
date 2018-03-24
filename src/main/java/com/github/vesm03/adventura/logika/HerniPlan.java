@@ -153,14 +153,18 @@ public class HerniPlan extends Observable {
         return aktualniProstor;
     }
     
+    public Prostor[] getProstory(){
+        return seznamProstoru2;
+    }
+    
     /**
      *  Metoda pro vložení věci do prostoru.
      *
      */
     public void vlozVecDoProstoru(Vec vec, Prostor prostor){
         prostor.vlozVec(vec);
-        setChanged();
-        notifyObservers();
+        //setChanged();
+        //notifyObservers();
     }
     
     /**

@@ -2,7 +2,7 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.vesm03.adventura.logika;
 
-
+import java.util.Observable;
 
 /*******************************************************************************
  * Instance třídy PrikazPoloz představují ...
@@ -10,7 +10,7 @@ package com.github.vesm03.adventura.logika;
  * @author    Martin Veselý
  * @version   28. 12. 2016
  */
-public class PrikazPoloz implements IPrikaz
+public class PrikazPoloz extends Observable implements IPrikaz
 {
     //== Datové atributy (statické i instancí)======================================
     private static final String NAZEV = "polož";
@@ -52,6 +52,8 @@ public class PrikazPoloz implements IPrikaz
             return "Taková věc v batohu není";
         }
         aktualniProstor.vlozVec(pokladanaVec);
+        setChanged();
+        notifyObservers();
         return "Položil jsi věc " +jmenoVeci;     
     }
 

@@ -36,6 +36,8 @@ public class Batoh extends Observable
     public boolean vlozVecDoBatohu (Vec vec){
         if (seznamVeci.size() < kapacita && vec.getJePrenositelna()){
             seznamVeci.put(vec.getNazev(), vec);
+            setChanged();
+            notifyObservers();
             return true;
         }
         return false;
@@ -67,6 +69,8 @@ public class Batoh extends Observable
         if (seznamVeci.containsKey(jmenoVeci)){
             nalezenaVec = seznamVeci.get(jmenoVeci);
             seznamVeci.remove(jmenoVeci);
+            setChanged();
+            notifyObservers();
             return nalezenaVec;
         }
         return null;
